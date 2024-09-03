@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Application List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Your Applications</h2>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Company Name</th>
+                    <th>Job Title</th>
+                    <th>Application Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="application : ${applications}">
+                    <td th:text="${application.companyName}"></td>
+                    <td th:text="${application.jobTitle}"></td>
+                    <td th:text="${application.applicationDate}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
